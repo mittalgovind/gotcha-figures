@@ -105,28 +105,7 @@
             </div>
         </div>
     </div>
-    <!-- <div class="banner">
-        <div class="gif-banner">
-            <div>
-              <img src="/ZeroForge/docs/assets/videos/gifs/knife.gif" alt="GIF 1">
-              <div class="gif-caption">"a knife"</div>
-            </div>
-            <div>
-              <img src="/ZeroForge/docs/assets/videos/gifs/spoon.gif" alt="GIF 2">
-              <div class="gif-caption">"a spoon"</div>
-            </div>
-            <div>
-              <img src="/ZeroForge/docs/assets/videos/gifs/wineglass.gif" alt="GIF 3">
-              <div class="gif-caption">"a wineglass"</div>
-            </div>
-            <div>
-                <img src="/ZeroForge/docs/assets/videos/gifs/umbrella.gif" alt="GIF 4">
-                <div class="gif-caption">"an umbrella"</div>
-            </div>
-  
-          </div>
-      
-    </div>     -->
+
     <hr class="divider" />
     <div class="container" style="max-width: 768px;">
         <div class="row">
@@ -143,7 +122,7 @@
     </div>
     <div class="container" style="max-width: 768px;">
         <div class="row">
-            <img src="/circumventing-ce/docs/assets/headline.png" alt="Headline Figure">
+            <img src="/CCE/docs/assets/headline.png" alt="Headline Figure">
         </div>
     </div>
    
@@ -168,50 +147,10 @@
             </div>
         </div>
     </div>
-    <!-- <div class="container" style="max-width: 768px;">
-        <div class="row">
-                <div class="col-md-12">
-                    <h2>How does ZeroForge work?</h2>
-                    
-                </div>
-        </div>
-    
-        <div class="row">
-                <img src="/ZeroForge/docs/assets/block_diagram_zeroconv.png" alt="Block Diagram">
-            </div>
-        <div class="row">
-                <div class="col-md-12">
-                    <p>Our method begins by taking a <a href="https://github.com/AutodeskAILab/Clip-Forge">CLIP-Forge</a> architecture which has been pre-trained on the ShapeNet dataset. To introduce novel concepts that we don't
-                         have 3D data for, we formulate a training loss that encourages high similarity between the generator's text input and image renderings of the generator's 3D output. This similarity score can be computed
-                        as an inner product in CLIP space by using CLIP's frozen image and text encoders. By using a differentiable rendering, we are able to use this metric as a training signal to update CLIP-Forge's weights and expand its generative capabilities.</p>
-                    <p>In addition to this, we also find that there are several other measures which must be taken to achieve good results. To prevent mode collapse, we add an additional contrastive penalty which maintains diversity in outputs across different text queries.
-                        One issue that can arise is the forgetting of the original shapes when training on new prompts outside ShapeNet. We address this by augmenting the CLIP-Forge decoder with a locked copy of the original parameters to allow rapid adaptation while 
-                        preserving existing concepts.
-                    </p>
-                </div>
-        </div>
-    
-        </div> -->
+
 </div>
 <hr class="divider" />
-<!-- <div class="container" style="max-width: 768px;">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-12">
-                <h2>Citation</h2>
-                <code>
-                    @misc{marshall2023zeroforge,<br>
-                        title={ZeroForge: Feedforward Text-to-Shape Without 3D Supervision}, <br>
-                        author={Kelly O. Marshall and Minh Pham and Ameya Joshi and Anushrut Jignasu <br> and Aditya Balu and Adarsh Krishnamurthy and Chinmay Hegde},<br>
-                        year={2023},<br>
-                        eprint={2306.08183}, <br>
-                        archivePrefix={arXiv}, <br>
-                        primaryClass={cs.CV} <br>
-}
-                </code>
-            </div>
-        </div>
-</div> -->
+
     <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
     <script src="/assets/js/yall.js"></script>
     <script>
