@@ -143,7 +143,7 @@
     <div class="container" style="max-width: 768px;">
         <div class="row">
             <div class="col-md-12">
-                <h2>Do current concept erasure methods work?</h2>
+                <h2>Do current concept erasure methods really work?</h2>
                 <p>
                     The <b>short</b> answer is: Yes. <br>
                     The <b>long</b> answer is: Not really. The erased models only prevent generation of images with the targeted concepts for certain prompts. In particular, we can learn special word embeddings that can retrieve  the so-called "erased" concepts from the sanitized models, and this is done without making any modifications to their existing weights. <br><br>
@@ -154,7 +154,7 @@
                     <div style="display: flex; justify-content: center;">
                         <figure>
                             <img src="/CCE/docs/assets/ci_art_1.png" alt="CI Art 1" style="max-width: 100%; height: auto;">
-                            <figcaption style="text-align: center;">Concept Inversion (CI) on ESD, Negative Prompt and Forget-Me-Not for art concept. The first three columns demonstrate the effectiveness of concept erasure methods when using the prompt: "a painting in the style of [<i>artist name</i>]". However, when we replace <i>artist name</i> with the special token learned by Concept Inversion, the model can still generate images of the erased styles.</figcaption>
+                            <figcaption style="text-align: center;"><b>Concept Inversion (CI) on ESD, Negative Prompt and Forget-Me-Not for art concept. </b> The first three columns demonstrate the effectiveness of concept erasure methods when using the prompt: "a painting in the style of [<i>artist name</i>]". However, when we replace <i>artist name</i> with the special token learned by Concept Inversion, the model can still generate images of the erased styles.</figcaption>
                         </figure>
                     </div>
                 </div>
@@ -163,7 +163,7 @@
                     <div style="display: flex; justify-content: center;">
                         <figure>
                             <img src="/CCE/docs/assets/ci_art_2.png" alt="CI Art 2" style="max-width: 100%; height: auto;">
-                            <figcaption style="text-align: center;">Your Caption Here</figcaption>
+                            <figcaption style="text-align: center;"><b>Concept Inversion (CI) on SLD for art concept.</b></figcaption>
                         </figure>
                     </div>
                 </div>
@@ -173,7 +173,7 @@
                     <div style="display: flex; justify-content: center;">
                         <figure>
                             <img src="/CCE/docs/assets/ci_id.png" alt="CI ID" style="max-width: 100%; height: auto;">
-                            <figcaption style="text-align: center;">Your Caption Here</figcaption>
+                            <figcaption style="text-align: center;"><b>Concept Inversion (CI) on Selective Amnesia and Forget-Me-Not for ID concept.</b> Selective Amnesia aims to map concepts such as Brad Pitt and Angelina Jolie to images of middle-aged people and clowns. The first row demonstrates the effectiveness of the algorithm when using the prompt: "a photo portrait of [<i>person name</i>]". However, when we replace <i>person name</i> with a pseudo-word associated with the learned word embedding, the model can still generate images of the erased concepts.</figcaption>
                         </figure>
                     </div>
                 </div>
@@ -193,12 +193,28 @@
                             <figcaption style="text-align: center;">Your Caption Here</figcaption>
                         </figure>
                     </div>
-
-
             </div>
         </div>
     </div>
+</div>
+<div class="container" style="max-width: 768px;">
+    <div class="row">
+        <div class="col-md-12">
 
+            <div class="col-md-12">
+                <h2>Citation</h2>
+                <code>
+                    @misc{marshall2023zeroforge,<br>
+                        title={ZeroForge: Feedforward Text-to-Shape Without 3D Supervision}, <br>
+                        author={Kelly O. Marshall and Minh Pham and Ameya Joshi and Anushrut Jignasu <br> and Aditya Balu and Adarsh Krishnamurthy and Chinmay Hegde},<br>
+                        year={2023},<br>
+                        eprint={2306.08183}, <br>
+                        archivePrefix={arXiv}, <br>
+                        primaryClass={cs.CV} <br>
+}
+                </code>
+            </div>
+        </div>
 </div>
 <hr class="divider" />
 
