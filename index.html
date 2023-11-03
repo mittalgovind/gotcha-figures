@@ -1,117 +1,314 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supplementary Material for GOTCHA</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
 
-    gtag('config', 'G-XB3PR2Y1TQ');
-    </script>
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Gotcha: Real-Time Video Deepfake Detection via Challenge-Response</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/assets/css/Highlight-Clean.css">
-    <link rel="stylesheet" href="/assets/css/styles.css">
+  .figure {
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+  }
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  .figure:not(:last-child) {
+    border-bottom: 2px solid #ccc; /* Separator between figures */
+  }
 
-    <meta property="og:site_name" content="Gotcha: Real-Time Video Deepfake Detection via Challenge-Response" />
-    <meta property="og:type" content="video.other" />
-    <meta property="og:title" content="Gotcha: Real-Time Video Deepfake Detection via Challenge-Response" />
-    <meta property="og:description" content="Gotcha: Real-Time Video Deepfake Detection via Challenge-Response" />
-    <meta property="og:url" content="https://nyu-dice-lab.github.io/CCE/" />
-    <!-- <meta property="og:image" content="/ZeroForge/docs/assets/figure3.pdf" /> -->
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff; /* Gray background for the whole grid */
+    padding: 10px;
+    margin-top: 20px;
+  }
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Gotcha: Real-Time Video Deepfake Detection via Challenge-Response" />
-    <meta name="twitter:description" content="We show that current concept erasure methods do not actually erase the targeted concepts." />
-    <!-- <meta name="twitter:url" content="/ZeroForge/docs/assets/figure3.pdf" />
-    <meta name="twitter:image" content="/ZeroForge/docs/assets/figure3.pdf" /> -->
-    <!-- <meta name="twitter:site" content="" /> -->
+  .grid {
+    display: grid;
+    grid-gap: 10px; /* Spacing between videos */
+    margin-top: 10px;
+  }
 
-    <!-- <script src="assets/js/video_comparison.js"></script>
-    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script> -->
-    <style>
-        .banner {
-        display: flex;
-        justify-content: center; /* Center the banner horizontally */
-        }
+  .video {
+    width: 128px;
+    height: 128px;
+    background-color: #000; /* Black background to indicate video space */
+  }
 
-        .gif-banner {
-        display: flex; /* Use flexbox to align items horizontally */
-        align-items: center; /* Center the GIFs vertically */
-        gap: -5px; /* Remove the whitespace between GIFs */
-        }
-        
-        .gif-banner img {
-        flex-shrink: 0; /* Prevent the GIFs from shrinking further */
-        width: auto; /* Allow the GIFs to scale proportionally */
-        height: 160px; /* Adjust the height as needed */
-        }
+  .video iframe {
+    width: 100%;
+    height: 100%;
+  }
 
-        .gif-caption {
-        text-align: center;
-        margin-top: 5px; /* Adjust the spacing between the GIF and the caption */
-        }
-    </style>
+.row-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 1;
+  padding: 5px;
+
+  text-orientation: mixed;
+}
+
+.column-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5px;
+}
+
+  /* Adjustments for 1x5 grid */
+  .grid-1x5 {
+    grid-template-columns: repeat(5, 128px);
+  }
+
+  /* Adjustments for 4x4 grid */
+  .grid-2x3 {
+    grid-template-columns: repeat(3, 128px);
+    grid-template-rows: repeat(2, 128px);
+  }
+
+  /* Adjustments for 5x4 grid */
+  .grid-5x4 {
+    grid-template-columns: repeat(4, 128px);
+    grid-template-rows: repeat(5, 128px);
+  }
+
+</style>
+
+
 </head>
-
 <body>
 
+<h1>Supplementary Material for GOTCHA</h1>
 
-    <hr class="divider" />
-    <div class="video-array-container">
-        <!-- You can repeat the video-input-wrapper 25 times for a 5x5 grid -->
-        <!-- Here's a sample for the first row -->
-        <div class="video-input-wrapper">
-            <label for="video1">Video 1</label>
-            <input type="file" id="video1" accept="video/*">
-        </div>
-        <div class="video-input-wrapper">
-            <label for="video2">Video 2</label>
-            <input type="file" id="video2" accept="video/*">
-        </div>
-        <div class="video-input-wrapper">
-            <label for="video3">Video 3</label>
-            <input type="file" id="video3" accept="video/*">
-        </div>
-        <div class="video-input-wrapper">
-            <label for="video4">Video 4</label>
-            <input type="file" id="video4" accept="video/*">
-        </div>
-        <div class="video-input-wrapper">
-            <label for="video5">Video 5</label>
-            <input type="file" id="video5" accept="video/*">
-        </div>
-        <!-- Continue for the remaining rows... -->
+<!-- Figure 1 with 4x4 Grid -->
+<div class="figure" id="figure1">
+  <p>Figure 1 caption goes here.</p>
+  <!-- <div class="grid-container">
+    <div class="grid" style="grid-template-columns: auto repeat(4, 1fr); grid-template-rows: repeat(5, auto) auto;"> -->
+<div class="grid-container">
+    <div class="grid grid-5x4">
+
+      <!-- Row labels -->
+      <div class="row-label">Row 1 Text</div>
+      <div class="row-label">Row 2 Text</div>
+      <div class="row-label">Row 3 Text</div>
+      <div class="row-label">Row 4 Text</div>
+      <div class="row-label">Row 5 Text</div>
+
+      <div class="video" style="grid-column: 2; grid-row: 1;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 3; grid-row: 1;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video" style="grid-column: 4; grid-row: 1;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 5; grid-row: 1;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="video" style="grid-column: 2; grid-row: 2;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 3; grid-row: 2;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video" style="grid-column: 4; grid-row: 2;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 5; grid-row: 2;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="video" style="grid-column: 2; grid-row: 3;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 3; grid-row: 3;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video" style="grid-column: 4; grid-row: 3;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 5; grid-row: 3;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="video" style="grid-column: 2; grid-row: 4;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 3; grid-row: 4;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video" style="grid-column: 4; grid-row: 4;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 5; grid-row: 4;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <div class="video" style="grid-column: 2; grid-row: 5;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 3; grid-row: 5;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video" style="grid-column: 4; grid-row: 5;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <!-- Repeat for the rest of the videos -->
+      <div class="video" style="grid-column: 5; grid-row: 5;">
+        <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <!-- Column labels -->
+      <div class="column-label" style="grid-column: 2;">Column 1 Text</div>
+      <div class="column-label" style="grid-column: 3;">Column 2 Text</div>
+      <div class="column-label" style="grid-column: 4;">Column 3 Text</div>
+      <div class="column-label" style="grid-column: 5;">Column 4 Text</div>
     </div>
+  </div>
+</div>
+    
+<!-- Figure 2 with 1x5 Grid -->
+<div class="figure" id="figure1">
+    <p>Figure 2 caption goes here.</p>
+    <!-- <div class="grid-container">
+      <div class="grid" style="grid-template-columns: auto repeat(5, 1fr); grid-template-rows: repeat(1, auto) auto;"> -->
+    <div class="grid-container">
+        <div class="grid grid-1x5">
+        <!-- Row labels -->
+        <div class="row-label">Row 1 Text</div>
+  
+        <div class="video" style="grid-column: 2; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- Repeat for the rest of the videos -->
+        <div class="video" style="grid-column: 3; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video" style="grid-column: 4; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- Repeat for the rest of the videos -->
+        <div class="video" style="grid-column: 5; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video" style="grid-column: 6; grid-row: 1;">
+            <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+  
+        <!-- Column labels -->
+        <div class="column-label" style="grid-column: 2;">Column 1 Text</div>
+        <div class="column-label" style="grid-column: 3;">Column 2 Text</div>
+        <div class="column-label" style="grid-column: 4;">Column 3 Text</div>
+        <div class="column-label" style="grid-column: 5;">Column 4 Text</div>
+        <div class="column-label" style="grid-column: 6;">Column 5 Text</div>
+      </div>
+    </div>
+  </div>
 
-<hr class="divider" />
+  <!-- Figure 1 with 4x4 Grid -->
+<div class="figure" id="figure1">
+    <p>Figure 3 caption goes here.</p>
+    <!-- <div class="grid-container">
+      <div class="grid" style="grid-template-columns: auto repeat(3, 1fr); grid-template-rows: repeat(2, auto) auto;"> -->
+    <div class="grid-container">
+        <div class="grid grid-2x3">
+        <!-- Row labels -->
+        <div class="row-label">Row 1 Text</div>
+        <div class="row-label">Row 2 Text</div>
+  
+        <div class="video" style="grid-column: 2; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- Repeat for the rest of the videos -->
+        <div class="video" style="grid-column: 3; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video" style="grid-column: 4; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
-    <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
-    <script src="/assets/js/yall.js"></script>
-    <script>
-        yall(
-            {
-                observeChanges: true
-            }
-        );
-    </script>
-    <script src="/assets/js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script>
-    <!-- Import the component -->
+  
+        <div class="video" style="grid-column: 2; grid-row: 2;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- Repeat for the rest of the videos -->
+        <div class="video" style="grid-column: 3; grid-row: 2;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video" style="grid-column: 4; grid-row: 2;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+         
+        <!-- Column labels -->
+        <div class="column-label" style="grid-column: 2;">Column 1 Text</div>
+        <div class="column-label" style="grid-column: 3;">Column 2 Text</div>
+        <div class="column-label" style="grid-column: 4;">Column 3 Text</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Figure 1 with 4x4 Grid -->
+<div class="figure" id="figure1">
+    <p>Figure 1 caption goes here.</p>
+    <!-- <div class="grid-container">
+      <div class="grid" style="grid-template-columns: auto repeat(5, 1fr); grid-template-rows: repeat(1, auto) auto;"> -->
+    <div class="grid-container">
+        <div class="grid grid-1x5">  
+        <!-- Row labels -->
+        <div class="row-label">Row 1 Text</div>
+  
+        <div class="video" style="grid-column: 2; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- Repeat for the rest of the videos -->
+        <div class="video" style="grid-column: 3; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="video" style="grid-column: 4; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <!-- Repeat for the rest of the videos -->
+        <div class="video" style="grid-column: 5; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+  
+        <div class="video" style="grid-column: 6; grid-row: 1;">
+          <iframe src="https://www.youtube.com/embed/J38Yq85ZoyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+  
+        <!-- Column labels -->
+        <div class="column-label" style="grid-column: 2;">Column 1 Text</div>
+        <div class="column-label" style="grid-column: 3;">Column 2 Text</div>
+        <div class="column-label" style="grid-column: 4;">Column 3 Text</div>
+        <div class="column-label" style="grid-column: 5;">Column 4 Text</div>
+        <div class="column-label" style="grid-column: 6;">Column 5 Text</div>
+      </div>
+    </div>
+  </div>
+ 
 </body>
-
 </html>
