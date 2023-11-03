@@ -7,6 +7,7 @@
 <style>
   body {
     font-family: Arial, sans-serif;
+    font-size: 20px;
   }
 
   h1 {
@@ -34,13 +35,13 @@
 
   .grid {
     display: grid;
-    grid-gap: 10px; /* Spacing between videos */
-    margin-top: 10px;
+    grid-gap: 30px; /* Spacing between videos */
+    margin-top: 30px;
   }
 
   .video {
-    width: 128px;
-    height: 128px;
+    width: 150px;
+    height: 150px;
     background-color: #000; /* Black background to indicate video space */
   }
 
@@ -94,18 +95,18 @@
 
 <!-- Figure 1 with 4x4 Grid -->
 <div class="figure" id="figure1">
-  <p>Figure 1 caption goes here.</p>
+  <p>Figure 4. Challenge videos of original and deepfake samples. Each row aligns outputs against the same instance of challenge, while each column aligns the same deepfake method. This illustration also shows the driving videos of imposter.</p>
   <!-- <div class="grid-container">
     <div class="grid" style="grid-template-columns: auto repeat(4, 1fr); grid-template-rows: repeat(5, auto) auto;"> -->
 <div class="grid-container">
     <div class="grid grid-5x4">
 
       <!-- Row labels -->
-      <div class="row-label">Row 1 Text</div>
-      <div class="row-label">Row 2 Text</div>
-      <div class="row-label">Row 3 Text</div>
-      <div class="row-label">Row 4 Text</div>
-      <div class="row-label">Row 5 Text</div>
+      <div class="row-label">No Challenge</div>
+      <div class="row-label">Head Movement</div>
+      <div class="row-label">Occlude with Hand</div>
+      <div class="row-label">Manual Facial Deformation</div>
+      <div class="row-label">Face Illumination with Flash</div>
 
       <div class="video" style="grid-column: 2; grid-row: 1;">
         <iframe src="./assets/allsamples/target_0.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -115,14 +116,14 @@
         <iframe src="./assets/allsamples/imposter_0.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 4; grid-row: 1;">
-        <iframe src="./assets/allsamples/dfl_0.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/lia_0.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <!-- Repeat for the rest of the videos -->
       <div class="video" style="grid-column: 5; grid-row: 1;">
         <iframe src="./assets/allsamples/fsgan_0.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 6; grid-row: 1;">
-        <iframe src="./assets/allsamples/lia_0.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/dfl_0.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
       <div class="video" style="grid-column: 2; grid-row: 2;">
@@ -133,14 +134,14 @@
         <iframe src="./assets/allsamples/imposter_1.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 4; grid-row: 2;">
-        <iframe src="./assets/allsamples/dfl_1.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/lia_1.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <!-- Repeat for the rest of the videos -->
       <div class="video" style="grid-column: 5; grid-row: 2;">
         <iframe src="./assets/allsamples/fsgan_1.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 6; grid-row: 2;">
-        <iframe src="./assets/allsamples/lia_1.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/dfl_1.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
       <div class="video" style="grid-column: 2; grid-row: 3;">
@@ -151,32 +152,31 @@
         <iframe src="./assets/allsamples/imposter_2.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 4; grid-row: 3;">
-        <iframe src="./assets/allsamples/dfl_2.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/lia_2.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <!-- Repeat for the rest of the videos -->
       <div class="video" style="grid-column: 5; grid-row: 3;">
         <iframe src="./assets/allsamples/fsgan_2.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 6; grid-row: 3;">
-        <iframe src="./assets/allsamples/lia_2.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/dfl_2.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
       <div class="video" style="grid-column: 2; grid-row: 4;">
-        <iframe src="./assets/allsamples/target_3.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <img src="./assets/allsamples/7.jpg" title="" style="width: 128px; height: 128px;">
       </div>
-      <!-- Repeat for the rest of the videos -->
       <div class="video" style="grid-column: 3; grid-row: 4;">
         <iframe src="./assets/allsamples/imposter_3.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 4; grid-row: 4;">
-        <iframe src="./assets/allsamples/dfl_3.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/lia_3.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <!-- Repeat for the rest of the videos -->
       <div class="video" style="grid-column: 5; grid-row: 4;">
         <iframe src="./assets/allsamples/fsgan_3.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 6; grid-row: 4;">
-        <iframe src="./assets/allsamples/lia_3.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/dfl_3.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
       <div class="video" style="grid-column: 2; grid-row: 5;">
@@ -187,35 +187,35 @@
         <iframe src="./assets/allsamples/imposter_4.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 4; grid-row: 5;">
-        <iframe src="./assets/allsamples/dfl_4.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/lia_4.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <!-- Repeat for the rest of the videos -->
       <div class="video" style="grid-column: 5; grid-row: 5;">
         <iframe src="./assets/allsamples/fsgan_4.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
       <div class="video" style="grid-column: 6; grid-row: 5;">
-        <iframe src="./assets/allsamples/lia_4.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="./assets/allsamples/dfl_4.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
 
       <!-- Column labels -->
-      <div class="column-label" style="grid-column: 2;">Column 1 Text</div>
-      <div class="column-label" style="grid-column: 3;">Column 2 Text</div>
-      <div class="column-label" style="grid-column: 4;">Column 3 Text</div>
-      <div class="column-label" style="grid-column: 5;">Column 4 Text</div>
-      <div class="column-label" style="grid-column: 6;">Column 5 Text</div>
+      <div class="column-label" style="grid-column: 2;">Target</div>
+      <div class="column-label" style="grid-column: 3;">Imposter</div>
+      <div class="column-label" style="grid-column: 4;">LIA</div>
+      <div class="column-label" style="grid-column: 5;">FSGAN</div>
+      <div class="column-label" style="grid-column: 6;">DFL</div>
     </div>
   </div>
 </div>
     
 <!-- Figure 2 with 1x5 Grid -->
 <div class="figure" id="figure1">
-    <p>Figure 2 caption goes here.</p>
+    <p>Figure 5. Artifacts defined for human evaluation. (a) has no deepfake artifacts, (b) has a boundary artifact near the right brow, in (c) the hand vanishes behind the face, (d) has hazy face detail, and (e) the sunglass starts vanishing briefly. Red objects indicate artifact locations..</p>
     <!-- <div class="grid-container">
       <div class="grid" style="grid-template-columns: auto repeat(5, 1fr); grid-template-rows: repeat(1, auto) auto;"> -->
     <div class="grid-container">
         <div class="grid grid-1x5">
         <!-- Row labels -->
-        <div class="row-label">Row 1 Text</div>
+        <!-- <div class="row-label">Row 1 Text</div> -->
   
         <div class="video" style="grid-column: 2; grid-row: 1;">
           <iframe src="./assets/artifacts/1.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -236,25 +236,25 @@
           </div>
   
         <!-- Column labels -->
-        <div class="column-label" style="grid-column: 2;">Column 1 Text</div>
-        <div class="column-label" style="grid-column: 3;">Column 2 Text</div>
-        <div class="column-label" style="grid-column: 4;">Column 3 Text</div>
-        <div class="column-label" style="grid-column: 5;">Column 4 Text</div>
-        <div class="column-label" style="grid-column: 6;">Column 5 Text</div>
+        <div class="column-label" style="grid-column: 2;">(a) No Artifact</div>
+        <div class="column-label" style="grid-column: 3;">(b) Facial Boundary Artifacts</div>
+        <div class="column-label" style="grid-column: 4;">(c) Vanishing Object</div>
+        <div class="column-label" style="grid-column: 5;">(d) Skin Texture Inconsistency</div>
+        <div class="column-label" style="grid-column: 6;">(e) Temporal Inconsistency</div>
       </div>
     </div>
   </div>
 
   <!-- Figure 1 with 4x4 Grid -->
 <div class="figure" id="figure1">
-    <p>Figure 3 caption goes here.</p>
+    <p>Figure 12. Sample challenge images obtained using a adaptive variant of DFL trained with diverse data for long training time along with a segmentation module. As observed this version is able to do several challenges with lesser artifacts.</p>
     <!-- <div class="grid-container">
       <div class="grid" style="grid-template-columns: auto repeat(3, 1fr); grid-template-rows: repeat(2, auto) auto;"> -->
     <div class="grid-container">
-        <div class="grid grid-2x3">
+        <div class="grid grid-4x3">
         <!-- Row labels -->
-        <div class="row-label">Row 1 Text</div>
-        <div class="row-label">Row 2 Text</div>
+        <!-- <div class="row-label">Row 1 Text</div> -->
+        <!-- <div class="row-label">Row 2 Text</div> -->
   
         <div class="video" style="grid-column: 2; grid-row: 1;">
           <iframe src="./assets/hdfl/adaptivehdfl_1.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -267,61 +267,27 @@
           <iframe src="./assets/hdfl/adaptivehdfl_3.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
-  
-        <div class="video" style="grid-column: 2; grid-row: 2;">
+          <!-- Column labels for Row 1 -->
+        <div class="column-label" style="grid-column: 2; grid-row: 2;">No Challenge</div>
+        <div class="column-label" style="grid-column: 3; grid-row: 2;">Head Movement</div>
+        <div class="column-label" style="grid-column: 4; grid-row: 2;">Occlude with Hand</div>
+
+
+        <div class="video" style="grid-column: 2; grid-row: 3;">
           <iframe src="./assets/hdfl/adaptivehdfl_4.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <!-- Repeat for the rest of the videos -->
-        <div class="video" style="grid-column: 3; grid-row: 2;">
+        <div class="video" style="grid-column: 3; grid-row: 3;">
           <iframe src="./assets/hdfl/adaptivehdfl_5.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-        <div class="video" style="grid-column: 4; grid-row: 2;">
+        <div class="video" style="grid-column: 4; grid-row: 3;">
           <iframe src="./assets/hdfl/adaptivehdfl_6.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
          
-        <!-- Column labels -->
-        <div class="column-label" style="grid-column: 2;">Column 1 Text</div>
-        <div class="column-label" style="grid-column: 3;">Column 2 Text</div>
-        <div class="column-label" style="grid-column: 4;">Column 3 Text</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Figure 1 with 4x4 Grid -->
-<div class="figure" id="figure1">
-    <p>Figure 1 caption goes here.</p>
-    <!-- <div class="grid-container">
-      <div class="grid" style="grid-template-columns: auto repeat(5, 1fr); grid-template-rows: repeat(1, auto) auto;"> -->
-    <div class="grid-container">
-        <div class="grid grid-1x5">  
-        <!-- Row labels -->
-        <div class="row-label">Row 1 Text</div>
-  
-        <div class="video" style="grid-column: 2; grid-row: 1;">
-          <iframe src="./assets/hdfl/hdfleval_1.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <!-- Repeat for the rest of the videos -->
-        <div class="video" style="grid-column: 3; grid-row: 1;">
-          <iframe src="./assets/hdfl/hdfleval_2.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video" style="grid-column: 4; grid-row: 1;">
-          <iframe src="./assets/hdfl/hdfleval_3.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <!-- Repeat for the rest of the videos -->
-        <div class="video" style="grid-column: 5; grid-row: 1;">
-          <iframe src="./assets/hdfl/hdfleval_4.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-  
-        <div class="video" style="grid-column: 6; grid-row: 1;">
-          <iframe src="./assets/hdfl/hdfleval_5.mp4" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-  
-        <!-- Column labels -->
-        <div class="column-label" style="grid-column: 2;">Column 1 Text</div>
-        <div class="column-label" style="grid-column: 3;">Column 2 Text</div>
-        <div class="column-label" style="grid-column: 4;">Column 3 Text</div>
-        <div class="column-label" style="grid-column: 5;">Column 4 Text</div>
-        <div class="column-label" style="grid-column: 6;">Column 5 Text</div>
+         <!-- Column labels for Row 2 -->
+          <div class="column-label" style="grid-column: 2; grid-row: 4;">Occlude with Object</div>
+          <div class="column-label" style="grid-column: 3; grid-row: 4;">Manual Deformation</div>
+          <div class="column-label" style="grid-column: 4; grid-row: 4;">Facial Illumination</div>
       </div>
     </div>
   </div>
